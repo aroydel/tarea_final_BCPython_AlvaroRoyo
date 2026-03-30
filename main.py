@@ -1,12 +1,20 @@
+#!/usr/bin/env python3
+
+import re
+import sys
 from rich.console import Console
 from rich.table import Table
-import re
 
 def main():
-    console = Console()
 
-    # Pedimos el fichero al usuario (porque no podemos usar sys)
-    sam_path = input("Introduce la ruta al archivo SAM: ").strip()
+    # Comprobar que se pasa la ruta al SAM
+    if len(sys.argv) < 2:
+        print("Uso: uv run main.py <archivo.sam>")
+        sys.exit(1)
+
+    sam_path = sys.argv[1]
+
+    console = Console()
 
     total = 0
     count_60 = 0
@@ -28,18 +36,16 @@ def main():
 
     percent = (count_60 / total) * 100 if total > 0 else 0
 
-    # ==== FORMATO CON RICH ====
-
+    # Crear tabla con Rich
     table = Table(title="Resumen de Calidad de Alineamiento (MAPQ)")
-
-    table.add_column("Métrica", justify="left", style="cyan", no_wrap=True)
-    table.add_column("Valor", justify="right", style="bold white")
+    table.add_column("Métrica", style="cyan")
+    table.add_column("Valor", style="bold white")
 
     table.add_row("Total de lecturas alineadas", str(total))
     table.add_row("Lecturas con MAPQ = 60", str(count_60))
     table.add_row("Porcentaje MAPQ=60", f"{percent:.2f}%")
 
-    console.print("\n[bold green]✔ Análisis completado correctamente[/bold green]\n")
+    # Mostrar en consola
     console.print(table)
 
 if __name__ == "__main__":

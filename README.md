@@ -56,5 +56,6 @@ uv sync
 ## Ejecución del pipeline
 
 chmod +x main.sh
+
 ./main.sh
 

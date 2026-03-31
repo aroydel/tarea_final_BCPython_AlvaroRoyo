@@ -59,3 +59,10 @@ chmod +x main.sh
 
 ./main.sh
 
+## Resultados
+
+Se pedirá por consola la ruta del archivo "/directory/example.sam"
+
+Se generará por consola el análisis correspondiente
+
+Además se creará una carpeta "results/" donde podremos ver también los resultados guardados en un archivo llamado "mapq_results.txt"

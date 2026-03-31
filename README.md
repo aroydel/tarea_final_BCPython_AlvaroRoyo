@@ -19,11 +19,17 @@ A partir de un fichero SAM, el script:
 ## Estructura del Proyecto
 
 main.py
+
 main.nf
+
 main.sh
+
 pyproject.toml
+
 uv.lock
+
 README.md
+
 results/
 
 ## Dependencias

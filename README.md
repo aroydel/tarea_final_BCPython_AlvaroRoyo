@@ -1,5 +1,7 @@
 # tarea_final_BCPython_AlvaroRoyo
-Repositorio para la entrega de la tarea final del Curso de Biología Computacional del CSIC. Autor: Álvaro Royo.
+Repositorio para la entrega de la tarea final del Curso de Biología Computacional del CSIC. 
+
+Autor: Álvaro Royo.
 
 # Analisis de Calidad de Alineamiento (MAPQ) – Proyecto Final
 
@@ -33,18 +35,21 @@ README.md
 results/
 
 ## Dependencias
-tener python y conda instalados
-recomendado crear un conda environment limpio y activarlo:
+Tener python y conda instalados
+
+Recomendado crear un conda environment limpio y activarlo:
 
 conda create --name <environment-name>
+
 conda activate environment-name
 
-intalar Nextflow y uv en ese environment:
+Instalar Nextflow y uv en ese environment:
 
 conda install -c bioconda nextflow
+
 conda install -c conda-forge uv
 
-sincronizar uc para respetar las dependencias (en nuestro caso "Rich")
+Sincronizar uv para respetar las dependencias (en nuestro caso "Rich")
 
 uv sync
 
